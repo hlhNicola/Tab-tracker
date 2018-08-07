@@ -9,9 +9,9 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())// a server can be hosted on a different domain (can be hit from all the world)
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
   res.send({
-    message: 'hello world!'
+    message: `Hello ${req.body.email}! You have registered! Have fun!`
   })
 })
 
