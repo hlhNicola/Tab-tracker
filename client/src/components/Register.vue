@@ -1,5 +1,5 @@
 <template>
-  <v-layout> <!-- this part is by Vuetify-->
+  <v-layout> <!-- this part is by Vuetify and I delete the column to make it normal-->
     <v-flex xs6 offset-xs3>
       <div class="white elevation-2">
         <v-toolbar flat dense class="cyan" dark>
