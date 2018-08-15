@@ -1,5 +1,3 @@
-// const Sequelize = require('sequelize')
-// const Op = Sequelize.Op
 module.exports = {
   port: 8081,
   db: {
@@ -12,5 +10,8 @@ module.exports = {
       storage: './tabtracker.sqlite',
       operatorsAliases: false
     }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
   }
 }

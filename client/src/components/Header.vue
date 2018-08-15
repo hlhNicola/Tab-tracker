@@ -1,7 +1,10 @@
 <template>
   <v-toolbar fixed class="cyan" dark>
     <v-toolbar-title class="mr=4">
-      TabTracker
+      <span class="home" @click="navigateTo({name:'root'})">
+         TabTracker
+      </span>
+
     </v-toolbar-title>
     <!-- Implement Me -->
     <!-- <v-toolbar-items>
@@ -13,19 +16,33 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <router-link to="register">
-        <v-btn flat>
+        <v-btn flat
+          @click="navigateTo({name:'login'})">
+          Login
+        </v-btn>
+        <v-btn flat
+          @click="navigateTo({name:'register'})"><!-- why object-->
           Sign Up
         </v-btn>
-      </router-link>
     </v-toolbar-items>
   </v-toolbar>
 </template>
 
 <script>
 export default {
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
+  }
 }
 </script>
 
 <style scoped>
+.home {
+cursor:pointer;
+}
+.home:hover{
+color: red
+}
 </style>
