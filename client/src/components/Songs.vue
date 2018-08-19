@@ -47,7 +47,7 @@
             <img class="album-Image" :src="song.albumImageUrl" alt="album-Image">
           </v-flex>
         </v-layout>
-       
+
         </div>
       </panel>
     </v-flex>
@@ -62,7 +62,7 @@ export default {
   },
   data () {
     return {
-      songs: null
+      songs: {}
     }
   },
   async mounted () {
