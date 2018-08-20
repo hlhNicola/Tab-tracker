@@ -2,9 +2,8 @@
   <panel title="Youtube Video">
     <youtube
       :video-id="youtubeId"
-      player-width="500"
-      player-height="200">
-
+      player-width=100%
+      player-height=100%>
     </youtube>
   </panel>
 </template>
@@ -23,5 +22,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+/* .song {
+  padding: 20px;
+  height: 330px;
+  overflow: hidden;
+} */
 </style>

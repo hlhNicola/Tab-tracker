@@ -1,4 +1,5 @@
 <template>
+<div>
   <v-layout>
     <v-flex xs6>
       <song-metadata :song="song" />
@@ -6,16 +7,16 @@
     <v-flex xs6>
       <youtube  :youtubeId="song.youtubeId" class="ml-2"/>
     </v-flex>
-    <!-- </v-flex>
-    <v-flex xs6 class="ml-2">
-      <panel title="Tabs">
-        <textarea
-          readonly
-          v-model="song.tab"
-        ></textarea>
-      </panel> -->
-
   </v-layout>
+  <v-layout>
+    <v-flex xs6>
+      <tabs :song="song"/>
+    </v-flex>
+    <v-flex xs6 class="ml-2">
+      <lyrics :song="song"/>
+    </v-flex>
+  </v-layout>
+</div>
 </template>
 
 <script>
@@ -23,6 +24,8 @@ import SongsService from '@/services/SongsService'
 import Panel from '@/components/Panel'
 import SongMetadata from './SongMetadata'
 import Youtube from './Youtube'
+import Lyrics from './Lyrics'
+import Tabs from './Tabs'
 export default {
   data () {
     return {
@@ -36,40 +39,14 @@ export default {
   components: {
     Panel,
     SongMetadata,
-    Youtube
+    Youtube,
+    Lyrics,
+    Tabs
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.song {
-  padding: 20px;
-  height: 330px;
-  overflow: hidden;
-}
-.song-title {
-  font-size: 30px;
-}
-.song-artist {
-  font-size: 24px;
-}
-.song-genre {
-  font-size: 18px;
-}
-.album-Image {
-  width: 80%;
-  margin: 0 auto;
-}
-textarea {
-  width: 100%;
-  font-family: monospace;
-  border: none;
-  height: 600px;
-  border-style: none;
-  border-color: transparent;
-  overflow: auto;
-  padding: 40px;
 
-}
 </style>

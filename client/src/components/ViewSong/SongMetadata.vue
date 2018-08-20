@@ -11,6 +11,17 @@
         <div class="song-genre">
           {{song.genre}}
         </div>
+        <v-btn
+          dark
+          class="cyan"
+          @click="navigateTo({
+            name: 'song-edit',
+            params: {
+              songId: song.id
+            }
+          })">
+          Edit
+        </v-btn>
       </v-flex>
       <v-flex xs6>
         <img class="album-Image" :src="song.albumImageUrl" alt="album-Image">
@@ -28,6 +39,11 @@ export default {
   props: [
     'song'
   ],
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
+  },
   components: {
     Panel
   }
@@ -36,11 +52,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.song {
-  padding: 20px;
-  height: 330px;
-  overflow: hidden;
-}
 .song-title {
   font-size: 30px;
 }
